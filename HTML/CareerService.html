@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/CSS/NavAndFooter.css" />
+    <link rel="stylesheet" href="/CSS/CareerService.css" />
+    <title>Partener Websites</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img
+          src="/IMAGES/ethio.png"
+          class="nav-img"
+          alt="Ethio-Academy"
+          width="50"
+        />
+
+        <div class="search-container">
+          <i class="fas fa-search search-icon"></i>
+          <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="Search Courses"
+          />
+        </div>
+
+        <div class="nav-links">
+          <a href="Home.html" target="_self" class="home">Home</a>
+          <a href="Courses.html" target="_self">Courses</a>
+          <div class="dropdown">
+            <button class="dropbtn">
+              Pages <i class="fas fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="MyLearning.html" target="_self">My Learning</a>
+              <a href="Mentors.html" target="_self">Mentors</a>
+              <a href="Quizes.html" target="_self">Quiz</a>
+
+              <a href="Gamification.html" target="_self">Gamification</a>
+              <a href="BlogAndArticles.html" target="_self"
+                >Blog and Articles</a
+              >
+              <a href="ResourceLibrary.html" target="_self">Resource Library</a>
+              <a href="community.html" target="_self">Community Engagement</a>
+              <a href="FAQ.html" target="_self">FAQ</a>
+            </div>
+          </div>
+          <a href="About.html" target="_self">About</a>
+          <a href="SignUp.html" target="_self">Sign Up</a>
+        </div>
+      </nav>
+
+      <div class="hero-section">
+        <div class="text">
+          <h1>Ethio-Academy Career Services</h1>
+          <h2>Unlocking Ethiopia's Professional Future.</h2>
+          <a href="/HTML/SignUp.html" class="cta-button">Start Your Journey</a>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <img src="/IMAGES/career.avif" alt="Ethio-Academy" />
+      </div>
+    </header>
+
+    <main>
+      <h2>Our Services</h2>
+
+      <section class="services">
+        <div class="service">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Job Placement Assistance</h3>
+          <p>Access our network of industry partners for job opportunities.</p>
+          <a href="/job-placement" class="cta-button">Learn More</a>
+        </div>
+        <div class="service">
+          <i class="fas fa-file-alt"></i>
+          <h3>Resume Building</h3>
+          <p>
+            Create a professional resume that highlights your skills and
+            experiences.
+          </p>
+          <a href="/resume-building" class="cta-button">Learn More</a>
+        </div>
+        <div class="service">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <h3>Interview Preparation</h3>
+          <p>
+            Get ready for interviews with mock interviews and interview tips.
+          </p>
+          <a href="/interview-preparation" class="cta-button">Learn More</a>
+        </div>
+        <div class="service">
+          <i class="fas fa-briefcase"></i>
+          <h3>Career Counseling</h3>
+          <p>Receive personalized guidance and advice for your career path.</p>
+          <a href="/career-counseling" class="cta-button">Learn More</a>
+        </div>
+        <div class="service">
+          <i class="fas fa-users"></i>
+          <h3>Networking Events</h3>
+          <p>
+            Attend networking events to connect with professionals in your
+            industry.
+          </p>
+          <a href="/networking-events" class="cta-button">Learn More</a>
+        </div>
+        <div class="service">
+          <i class="fas fa-laptop-code"></i>
+          <h3>Skills Development</h3>
+          <p>Enhance your skills with online courses and workshops.</p>
+          <a href="/skills-development" class="cta-button">Learn More</a>
+        </div>
+      </section>
+      <section class="testimonial-faq">
+        <section class="testimonial">
+          <h2>Testimony</h2>
+          <div class="testimonial-card">
+            <p>
+              "Ethio-Academy's career services helped me land my dream job. I am
+              forever grateful!"
+            </p>
+            <span>- John Doe</span>
+          </div>
+          <div class="testimonial-card">
+            <p>
+              "The resume building workshop was incredibly helpful. I received
+              multiple job offers after updating my resume!"
+            </p>
+            <span>- Jane Smith</span>
+          </div>
+        </section>
+
+        <section class="faq">
+          <h2>FAQ</h2>
+          <div class="faq-item">
+            <h3>How do I access career services?</h3>
+            <p>
+              You can access career services by signing up for an account on our
+              website. Once logged in, you'll have access to all our career
+              resources.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Are the career services free?</h3>
+            <p>
+              Yes, our career services are free for all registered users of
+              Ethio-Academy.
+            </p>
+          </div>
+        </section>
+      </section>
+      <hr />
+
+      <section class="contact-news">
+        <section class="contact">
+          <h2>Contact Us</h2>
+          <p>
+            If you have any questions or need assistance, feel free to contact
+            us using the form below or by emailing us at
+            contact@ethioacademy.com.
+          </p>
+          <form action="/contact" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit" class="cta-button">Submit</button>
+          </form>
+        </section>
+
+        <section class="newsletter">
+          <h2>Subscribe to Our Newsletter</h2>
+          <p>
+            Stay up-to-date with the latest career tips, job openings, and
+            events by subscribing to our newsletter.
+          </p>
+          <form action="/subscribe" method="POST">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+            <button type="submit" class="cta-button">Subscribe</button>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <iframe
+      src="Footer.html"
+      width="100%"
+      height="540"
+      frameborder="0"
+      scrolling="no"
+    ></iframe>
+  </body>
+</html>

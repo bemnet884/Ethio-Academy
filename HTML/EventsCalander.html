@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/CSS/NavAndFooter.css" />
+    <link rel="stylesheet" href="/CSS/EventsCalander.css" />
+    <title>Events Calander</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img
+          src="/IMAGES/ethio.png"
+          class="nav-img"
+          alt="Ethio-Academy"
+          width="50"
+        />
+
+        <div class="search-container">
+          <i class="fas fa-search search-icon"></i>
+          <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="Search Courses"
+          />
+        </div>
+
+        <div class="nav-links">
+          <a href="Home.html" target="_self" class="home">Home</a>
+          <a href="Courses.html" target="_self">Courses</a>
+          <div class="dropdown">
+            <button class="dropbtn">
+              Pages <i class="fas fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="MyLearning.html" target="_self">My Learning</a>
+              <a href="Mentors.html" target="_self">Mentors</a>
+              <a href="Quizes.html" target="_self">Quiz</a>
+
+              <a href="Gamification.html" target="_self">Gamification</a>
+              <a href="BlogAndArticles.html" target="_self"
+                >Blog and Articles</a
+              >
+              <a href="ResourceLibrary.html" target="_self">Resource Library</a>
+              <a href="community.html" target="_self">Community Engagement</a>
+              <a href="FAQ.html" target="_self">FAQ</a>
+            </div>
+          </div>
+          <a href="About.html" target="_self">About</a>
+          <a href="SignUp.html" target="_self">Sign Up</a>
+        </div>
+      </nav>
+
+      <div class="hero-section">
+        <div class="text">
+          <h1>Ethio-Academy</h1>
+          <h2>
+            Empower. Engage. Excel. <br />
+            Unlocking Ethiopia's Educational Future.
+          </h2>
+          <a href="/HTML/SignUp.html" class="cta-button">Start Your Journey</a>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <img src="/IMAGES/sche.jpeg" alt="Ethio-Academy" />
+      </div>
+    </header>
+    <main>
+      <div class="calendar">
+        <div class="controls">
+          <button id="prevMonth">&lt;</button>
+          <h2 id="currentMonth">April 2024</h2>
+          <button id="nextMonth">&gt;</button>
+        </div>
+        <hr />
+
+        <div class="weekdays">
+          <div>Sun</div>
+          <div>Mon</div>
+          <div>Tue</div>
+          <div>Wed</div>
+          <div>Thu</div>
+          <div>Fri</div>
+          <div>Sat</div>
+        </div>
+        <div class="days"></div>
+        <div class="event-details">
+          <h3>Event Details</h3>
+          <ul id="eventList"></ul>
+        </div>
+        <div class="upcoming-events">
+          <h3>Upcoming Events</h3>
+          <ul id="upcomingEventList"></ul>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      // Sample event data
+      const events = [
+        {
+          title: "Conference on Machine Learning",
+          date: "August 12, 2024",
+          time: "9:00 AM - 5:00 PM",
+          location: "Auditorium A",
+        },
+        {
+          title: "Web Development Bootcamp",
+          date: "June 20, 2024",
+          time: "9:00 AM - 4:00 PM",
+          location: "Conference Room B",
+        },
+        {
+          title: "Art Exhibition",
+          date: "April 15, 2024",
+          time: "6:00 PM - 9:00 PM",
+          location: "Art Gallery",
+        },
+        {
+          title: "Music Concert",
+          date: "May 3, 2024",
+          time: "7:30 PM - 10:30 PM",
+          location: "Outdoor Stage",
+        },
+        // Add more event data as needed
+      ];
+
+      // Get references to the event list and upcoming event list
+      const eventList = document.getElementById("eventList");
+      const upcomingEventList = document.getElementById("upcomingEventList");
+
+      // Function to display events
+      function displayEvents() {
+        eventList.innerHTML = ""; // Clear previous events
+        events.forEach((event) => {
+          const li = document.createElement("li");
+          li.textContent = `${event.title} - ${event.date}, ${event.time}, ${event.location}`;
+          eventList.appendChild(li);
+        });
+      }
+
+      // Function to display upcoming events
+      function displayUpcomingEvents() {
+        upcomingEventList.innerHTML = ""; // Clear previous upcoming events
+        const currentDate = new Date();
+        const upcomingEvents = events.filter((event) => {
+          const eventDate = new Date(event.date);
+          return eventDate > currentDate;
+        });
+        upcomingEvents.forEach((event) => {
+          const li = document.createElement("li");
+          li.textContent = `${event.title} - ${event.date}, ${event.time}, ${event.location}`;
+          upcomingEventList.appendChild(li);
+        });
+      }
+
+      // Initial display of events and upcoming events
+      displayEvents();
+      displayUpcomingEvents();
+
+      // Get references to the month navigation buttons and current month display
+      const prevMonthBtn = document.getElementById("prevMonth");
+      const nextMonthBtn = document.getElementById("nextMonth");
+      const currentMonthDisplay = document.getElementById("currentMonth");
+
+      // Event listeners for month navigation buttons
+      prevMonthBtn.addEventListener("click", showPreviousMonth);
+      nextMonthBtn.addEventListener("click", showNextMonth);
+
+      // Initial month and year
+      let currentMonth = 3; // April (0-indexed)
+      let currentYear = 2024;
+
+      // Array of month names
+      const monthNames = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+
+      // Function to display the current month
+      function displayCurrentMonth() {
+        currentMonthDisplay.textContent = `${monthNames[currentMonth]} ${currentYear}`;
+      }
+
+      // Function to display the days of the current month
+      function displayDaysOfMonth() {
+        const daysContainer = document.querySelector(".days");
+        daysContainer.innerHTML = "";
+
+        const daysInMonth = new Date(
+          currentYear,
+          currentMonth + 1,
+          0
+        ).getDate();
+
+        for (let i = 1; i <= daysInMonth; i++) {
+          const day = document.createElement("div");
+          day.textContent = i;
+
+          // Check if the day has events
+          const hasEvent = events.some((event) => {
+            const eventDate = new Date(event.date);
+            return (
+              eventDate.getFullYear() === currentYear &&
+              eventDate.getMonth() === currentMonth &&
+              eventDate.getDate() === i
+            );
+          });
+
+          // Add a class to the day if it has events
+          if (hasEvent) {
+            day.classList.add("event-day");
+
+            // Event listener for displaying event details on click
+            day.addEventListener("click", () => {
+              const selectedDate = new Date(currentYear, currentMonth, i);
+              const selectedEvents = events.filter((event) => {
+                const eventDate = new Date(event.date);
+                return (
+                  eventDate.getFullYear() === currentYear &&
+                  eventDate.getMonth() === currentMonth &&
+                  eventDate.getDate() === i
+                );
+              });
+              displayEventDetails(selectedDate, selectedEvents);
+            });
+          }
+
+          daysContainer.appendChild(day);
+        }
+      }
+
+      // Function to display event details for the selected day
+      function displayEventDetails(selectedDate, selectedEvents) {
+        eventList.innerHTML = ""; // Clear previous event details
+
+        // Find the nearest upcoming event
+        const currentDate = new Date();
+        const upcomingEvents = selectedEvents.filter((event) => {
+          const eventDate = new Date(event.date);
+          return eventDate > currentDate;
+        });
+
+        // Display the nearest upcoming event
+        if (upcomingEvents.length > 0) {
+          const event = upcomingEvents[0];
+          const li = document.createElement("li");
+          li.textContent = `Next Event: ${event.title}, ${event.date}, ${event.time}, ${event.location}`;
+          eventList.appendChild(li);
+        } else {
+          const li = document.createElement("li");
+          li.textContent = "No upcoming events for this day.";
+          eventList.appendChild(li);
+        }
+      }
+
+      // Function to show the previous month
+      function showPreviousMonth() {
+        currentMonth--;
+        if (currentMonth < 0) {
+          currentMonth = 11; // December
+          currentYear--;
+        }
+        displayCurrentMonth();
+        displayDaysOfMonth();
+        displayUpcomingEvents(); // Update upcoming events
+      }
+
+      // Function to show the next month
+      function showNextMonth() {
+        currentMonth++;
+        if (currentMonth > 11) {
+          currentMonth = 0; // January
+          currentYear++;
+        }
+        displayCurrentMonth();
+        displayDaysOfMonth();
+        displayUpcomingEvents(); // Update upcoming events
+      }
+
+      // Initial display of current month
+      displayCurrentMonth();
+      displayDaysOfMonth();
+    </script>
+
+    <iframe
+      src="Footer.html"
+      width="100%"
+      height="540"
+      frameborder="0"
+      scrolling="no"
+    ></iframe>
+  </body>
+</html>

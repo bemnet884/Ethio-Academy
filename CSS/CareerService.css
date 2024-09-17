@@ -1,0 +1,153 @@
+.services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+.service {
+  width: 350px;
+  margin-bottom: 20px;
+}
+.cta-button{
+  border: none;
+}
+.contact-news{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.contact,
+.newsletter {
+  width: calc(50% - 10px);
+}
+
+.contact,
+.newsletter {
+  width: 100%; 
+  margin: 20px;
+}
+
+.cta-button {
+  border: none;
+}
+.testimonial-faq {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.testimonial,
+.faq {
+  width: 48%; /* Adjust the width as needed */
+}
+
+.testimonial h2,
+.faq h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #007bff;
+}
+
+.testimonial-card,
+.faq-item {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 20px;
+}
+
+.testimonial-card:hover,
+.faq-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card span,
+.faq-item h3 {
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.testimonial-card p,
+.faq-item p {
+  margin-bottom: 20px;
+}
+
+main h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+  color: #007bff;
+}
+
+.service,
+.testimonial-card,
+.faq-item {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin: 20px;
+}
+
+.service:hover,
+.testimonial-card:hover,
+.faq-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service i,
+.testimonial-card i {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.service h3,
+.testimonial-card span,
+.faq-item h3 {
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.service p,
+.testimonial-card p,
+.faq-item p {
+  margin-bottom: 20px;
+}
+
+form {
+  width: 100%;
+  max-width: 500px;
+}
+
+input,
+textarea,
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,44 @@
+.contact-mentors {
+  background-color: #f9f9f9;
+  padding: 40px 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-mentors h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color:  #007bff;
+}
+
+.contact-mentors p {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.mentor-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.mentor {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.mentor h3 {
+  margin-bottom: 10px;
+}
+
+.mentor p {
+  margin-bottom: 5px;
+}

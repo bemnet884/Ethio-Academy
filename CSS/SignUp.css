@@ -1,0 +1,79 @@
+.sign-up-form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.sign-up-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.sign-up-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #007bff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sign-up-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-up-form label {
+  margin-bottom: 8px;
+  color: #0056b3;
+}
+
+.sign-up-form input[type="text"],
+.sign-up-form input[type="email"],
+.sign-up-form input[type="password"],
+.sign-up-form select {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+  font-size: 16px;
+}
+
+.sign-up-form input[type="text"]:focus,
+.sign-up-form input[type="email"]:focus,
+.sign-up-form input[type="password"]:focus,
+.sign-up-form select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.sign-up-form button {
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 16px;
+}
+
+.sign-up-form button:hover {
+  background-color: #0056b3;
+}
+
+.sign-up-form input[type="checkbox"],
+.sign-up-form input[type="radio"] {
+  margin-right: 5px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.sign-up-form input[type="checkbox"]:hover,
+.sign-up-form input[type="radio"]:hover {
+  transform: scale(1.1);
+}

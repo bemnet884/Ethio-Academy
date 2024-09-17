@@ -1,0 +1,61 @@
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.jobs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.job {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  padding: 20px;
+  margin: 20px;
+  width: calc(50% - 40px);
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.job:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.job h2 {
+  color: #007bff;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.job p {
+  margin-bottom: 10px;
+}
+
+.job a {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+}
+
+.job a:hover {
+  color: white;
+}

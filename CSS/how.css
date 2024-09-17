@@ -1,0 +1,40 @@
+.explanation {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px; /* Add gap between columns */
+}
+
+.explanation-item {
+  margin: 0 10px; /* Add margin around each column */
+}
+
+.explanation h2 {
+  color:  #007bff;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.explanation p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.explanation img {
+  display: block;
+  max-width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.explanation a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.explanation a:hover {
+  color: #0056b3;
+}
